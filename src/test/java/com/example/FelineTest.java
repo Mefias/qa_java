@@ -1,6 +1,5 @@
 package com.example;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,20 +11,15 @@ public class FelineTest {
     Feline feline;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         feline = new Feline();
     }
 
     @Test
-    public void eatMeatReturnsNonEmptyList() {
-        try {
-            List<String> meat = feline.eatMeat();
-            int unexpected = 0;
-            int actual = meat.size();
-            assertNotEquals(unexpected, actual);
-        } catch (Exception e) {
-            assertFalse("Должно возвращать список", true) ;
-        }
+    public void eatMeatReturnsNonEmptyList() throws Exception {
+        List<String> expected = List.of("Животные", "Птицы", "Рыба");
+        List<String> actual = feline.eatMeat();
+        assertEquals(expected, actual);
     }
 
     @Test

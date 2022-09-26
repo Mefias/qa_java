@@ -8,17 +8,17 @@ import org.junit.runners.Parameterized;
 import static org.junit.Assert.*;
 
 @RunWith(Parameterized.class)
-public class FelineTestParameterized {
+public class FelineParameterizedTest {
     private final int input;
     private final int expected;
     Feline feline;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         feline = new Feline();
     }
 
-    public FelineTestParameterized(int kittenIn, int kittenOut) {
+    public FelineParameterizedTest(int kittenIn, int kittenOut) {
         this.input = kittenIn;
         this.expected = kittenOut;
     }
